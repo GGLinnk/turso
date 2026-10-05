@@ -8,7 +8,18 @@ license.workspace = true
 repository.workspace = true
 
 [dependencies]
-turso_core = { workspace = true, features = ["conn_raw_api"] }
+# The default features of turso_core minus `simd`, whose simsimd dependency compiles C.
+turso_core = { path = "../../core", version = "0.8.1", default-features = false, features = [
+    "fs",
+    "uuid",
+    "time",
+    "json",
+    "series",
+    "encryption",
+    "percentile",
+    "autovacuum",
+    "conn_raw_api",
+] }
 turso_parser = { workspace = true }
 thiserror = "2.0.12"
 tracing = "0.1.41"

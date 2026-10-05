@@ -16,7 +16,17 @@ crate-type = ["lib", "cdylib", "staticlib"]
 
 [dependencies]
 env_logger = { workspace = true, default-features = false }
-turso_core = { workspace = true }
+# The default features of turso_core minus `simd`, whose simsimd dependency compiles C.
+turso_core = { path = "../../core", version = "0.8.1", default-features = false, features = [
+    "fs",
+    "uuid",
+    "time",
+    "json",
+    "series",
+    "encryption",
+    "percentile",
+    "autovacuum",
+] }
 turso_sync_engine = { workspace = true }
 turso_sdk_kit = { workspace = true }
 turso_sdk_kit_macros = { workspace = true }
