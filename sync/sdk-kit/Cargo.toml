@@ -29,6 +29,3 @@ parking_lot = { workspace = true, features = ["arc_lock", "send_guard"] }
 # compile for wasm.
 [target.'cfg(not(target_family = "wasm"))'.dependencies]
 tracing-appender = { workspace = true }
-
-[build-dependencies]
-bindgen = "0.69.5"

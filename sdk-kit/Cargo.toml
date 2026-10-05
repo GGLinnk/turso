@@ -37,6 +37,3 @@ tracing-appender = { workspace = true }
 
 [dev-dependencies]
 tempfile = { workspace = true }
-
-[build-dependencies]
-bindgen = "0.69.5"
